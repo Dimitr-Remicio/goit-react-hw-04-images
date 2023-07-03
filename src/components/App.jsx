@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import style from './App.module.scss';
-import api from "../services/api";
+// import api from "../services/api";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import ImageGalleryItem from './ImageGalleryItem/ImageGalleryItem';
+import {fetchGalleryWithQuery} from './../services/api';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
@@ -12,7 +13,9 @@ export const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
+  // eslint-disable-next-line
   const [error, setError] = useState(null);
+  // eslint-disable-next-line 
   const [isLoading, setIsLoading] = useState(false);
 
   const formSubmitHandler = (data) => {
@@ -36,7 +39,7 @@ export const App = () => {
       setIsLoading(true);
 
       try {
-        const imagesData = await api.fetchImageWithQuery(searchQuery, page);
+        const imagesData = await fetchGalleryWithQuery(searchQuery, page);
         const imagesHits = imagesData.hits;
 
         if (!imagesHits.length) {
