@@ -9,6 +9,7 @@ export const ImageGallery = ({children}) => {
     )
   }
 
+export default ImageGallery
 
 ImageGallery.propTypes = {
   children: PropTypes.node

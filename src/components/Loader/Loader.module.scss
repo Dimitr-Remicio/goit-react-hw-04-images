@@ -36,3 +36,32 @@
       transform: translateY(10px) scale(1.8) rotate(360deg);
     }
   }
+
+
+  @media screen and (max-width: 550px) {
+    .loading div {
+      background-color: rgba(255, 55, 0, 0.889);
+      width: 10px;
+      height: 10px;
+      margin: 10px;
+      border-radius: 50px;
+      animation-name: load912355;
+      animation-duration: .9s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      text-align: center;
+      justify-content: center;
+    }
+
+      
+  @keyframes load912355 {
+    0% {
+      transform: translateY(20px) scale(1);
+    }
+  
+    100% {
+      transform: translateY(10px) scale(1.1) rotate(360deg);
+    }
+  }
+
+  }

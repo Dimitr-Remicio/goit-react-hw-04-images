@@ -4,18 +4,19 @@
   "private": true,
   "homepage": "https://dimitr-remicio.github.io/goit-react-hw-04-images/",
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "notiflix": "^3.2.6",
+    "postcss-normalize": "^10.0.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-scripts": "5.0.1",
-    "prop-types": "^15.8.1",
-    "sass": "^1.63.4",
-    "notiflix": "^3.2.6",
-    "postcss-normalize": "^10.0.1"
+    "sass": "^1.63.4"
   },
   "scripts": {
     "start": "react-scripts start",
