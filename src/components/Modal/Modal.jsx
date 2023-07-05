@@ -7,15 +7,18 @@ const modalRoot = document.getElementById('root');
 
 const Modal = ({onClose, children}) => {
 
+  
   useEffect(()=>{
     window.addEventListener('keydown', handleKeyDown);
-
+    
     return()=>{
       window.removeEventListener('keydown', handleKeyDown);
     }
-  },[onClose]);
-
- const handleKeyDown = (e) => {
+    // eslint-disable-next-line
+  },[]);
+    // eslint-disable-next-line
+  
+   const handleKeyDown = (e) => {
     if (e.code === 'Escape') {
       onClose();
     }
