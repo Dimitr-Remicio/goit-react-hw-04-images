@@ -1,46 +1,44 @@
-import { useEffect, useCallback } from 'react';
-import { createPortal } from 'react-dom';
-import s from './Modal.module.scss';
+import { useEffect } from "react";
+import css from './Modal.module.css'
+import { createPortal } from "react-dom";
+import PropTypes from "prop-types";
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.getElementById('root');
 
-function Modal(props) {
-    // Closing modal window on Esc button click
-    const handleKeyDown = useCallback(event => {
-        if (event.code === 'Escape') {
-            props.onModalClose();
-        }
-    }, [props]);
+const Modal = ({onClose, children}) => {
 
-    // Adding and removing event listener for Esc button click
-    useEffect(() => {
-        window.addEventListener('keydown', handleKeyDown)
-        
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, [handleKeyDown]);
+  useEffect(()=>{
+    window.addEventListener('keydown', handleKeyDown);
 
-    // Closing modal window on backdrop click
-    const handleBackdropClick = event => {
-        if (event.currentTarget === event.target) {
-            props.onModalClose();
-        }
+    return()=>{
+      window.removeEventListener('keydown', handleKeyDown);
     }
+  },[onClose]);
 
-    const { onModalClose, children } = props;
-    
+ const handleKeyDown = (e) => {
+    if (e.code === 'Escape') {
+      onClose();
+    }
+  };
+
+  const handleClickBackdrop = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
     return createPortal(
-        <div className={s.overlay} onClick={handleBackdropClick}>
-            <button type='button' className={s.close} onClick={onModalClose}>
-                <i className="fa fa-times" aria-hidden="true"></i>
-            </button>
-            <div className={s.modal}>
-                {children}
-            </div>
-        </div>,
-        modalRoot
+      <div className={css['overlay']} onClick={handleClickBackdrop}>
+        <div className={css['modal']}>{children}</div>
+      </div>,
+      modalRoot
     );
+  }
+
+Modal.propTypes = {
+  onClose: PropTypes.func,
+  children: PropTypes.node
 }
+
 
 export default Modal;

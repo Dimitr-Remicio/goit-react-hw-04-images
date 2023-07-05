@@ -1,5 +1,7 @@
+
+
 .searchbar {
-    top: 0;
+  top: 0;
     left: 0;
     border-radius: 1px;
     position:sticky;
@@ -7,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 64px;
+    min-height: 80px;
     padding-right: 24px;
     padding-left: 24px;
     padding-top: 12px;
@@ -23,7 +25,8 @@
       display: flex;
       align-items: center;
       width: 100%;
-      max-width: 600px;
+      max-width: 350px;
+      height: 40px;
       background-color: #ffc1c1;
       border: 1px solid #7c2c2c;
       border-radius: 3px;
@@ -51,7 +54,7 @@
     height: auto;
     color: #000000;
     background-color: #ffc1c1;
-    margin-left: 10px;
+    margin-left: 5px;
   }
   .searchForm-button:hover {
     opacity: 1;
@@ -89,6 +92,29 @@
 
   @media screen and (max-width: 550px) {
 
+    
+.searchbar {
+  height: 80px;
+
+  top: 0;
+    left: 0;
+    border-radius: 1px;
+    position:sticky;
+    z-index: 1100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #7c2c2c;
+    background-color: #ff8181;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    }
+  
     .searchForm-button {
       display: inline-block;
       width: 58px;

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import style from './App.module.scss';
 // import api from "../services/api";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -13,7 +13,7 @@ export const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
-  // eslint-disable-next-line
+  // eslint-disable-next-line 
   const [error, setError] = useState(null);
   // eslint-disable-next-line 
   const [isLoading, setIsLoading] = useState(false);
@@ -74,21 +74,24 @@ export const App = () => {
     setPage((prevPage) => prevPage + 1);
   };
 
+  
   return (
     <div className={style['app']}>
       <Searchbar onSubmit={formSubmitHandler} />
       <ImageGallery>
         {images.map(({ id, webformatURL, tags, largeImageURL }) => (
           <ImageGalleryItem
-            key={id}
-            url={webformatURL}
-            alt={tags}
-            largeImage={largeImageURL}
+          key={id}
+          url={webformatURL}
+          alt={tags}
+          largeImage={largeImageURL}
           />
-        ))}
+          ))}
       </ImageGallery>
       {isLoading && <Loader />}
-      {images.length !== 0 && <Button onClick={loadMore} />}
+
+      {images.length !== 0 && <div className={style['footer']}><Button onClick={loadMore} /></div>}
+    
     </div>
   );
 };

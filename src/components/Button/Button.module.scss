@@ -1,19 +1,24 @@
 .button {
-    padding: 8px 16px;
-    border-radius: 10px;
+
+    padding: 14px 16px;
+    border-radius: 15px;
     background-color: #ff8181;
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
+    
+    
     display: inline-block;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 10px;
-    color: #fff;
-    border: 0;
+    margin: 20px auto;
+
+
+    
+    color: #000000;
+    border: 0px solid;
+
     text-decoration: none;
     cursor: pointer;
     font-family: inherit;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 24px;
     font-style: normal;
     font-weight: 500;
@@ -26,5 +31,5 @@
   
   .button:hover,
   .button:focus {
-    background-color: #303f9f;
+    background-color: #fdc0c0;
   }
